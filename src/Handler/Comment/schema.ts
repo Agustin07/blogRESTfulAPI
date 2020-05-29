@@ -2,14 +2,14 @@ import * as mongoose from "mongoose";
 
 export interface IComment extends mongoose.Document {
 	_id : mongoose.Types.ObjectId,
-	comment : string,
+	content : string,
 	user: string,
 	datePosted ?: Date,
 	isDeleted ?:  boolean
 }
  
 export const commentSchema = new mongoose.Schema({
-	comment : String,
+	content : String,
 	user: String,
 	datePosted : { type : Date, default : Date.now },
 	isDeleted : { type : Boolean, default : false }
